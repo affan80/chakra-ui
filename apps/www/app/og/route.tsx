@@ -4,8 +4,6 @@ import { NextRequest } from "next/server"
 
 export const runtime = "edge"
 
-export { size } from "@/components/open-graph-image"
-
 export const contentType = "image/png"
 
 export async function GET(request: NextRequest) {
@@ -45,6 +43,6 @@ export async function GET(request: NextRequest) {
       headers: {
         "Cache-Control": "public, max-age=31536000, immutable",
       },
-    },
+    } as any,
   )
 }
